@@ -1,0 +1,45 @@
+mysql> select * from student1;
++-------+---------+-----------+
+| st_id | st_name | st_salary |
++-------+---------+-----------+
+|   101 | rani    |     20000 |
+|   102 | raji    |     30000 |
+|   103 | sai     |     25000 |
+|   104 | raji    |     40000 |
+|   105 | vani    |     50000 |
++-------+---------+-----------+
+5 rows in set (0.00 sec)
+mysql> select * from employee;
++--------+----------+-----------+
+| emp_id | emp_name | emp_ph_no |
++--------+----------+-----------+
+|    105 | ravi     | 723456    |
+|    106 | sari     | 234567    |
+|    107 | raji     | 7653456   |
++--------+----------+-----------+
+3 rows in set (0.00 sec)
+mysql> select st_name from student1 union select emp_name from employee;
++---------+
+| st_name |
++---------+
+| rani    |
+| raji    |
+| sai     |
+| vani    |
+| ravi    |
+| sari    |
++---------+
+6 rows in set (0.02 sec)
+mysql> select st_name from student1 union select emp_id from employee;
++---------+
+| st_name |
++---------+
+| rani    |
+| raji    |
+| sai     |
+| vani    |
+| 105     |
+| 106     |
+| 107     |
++---------+
+7 rows in set (0.00 sec)
